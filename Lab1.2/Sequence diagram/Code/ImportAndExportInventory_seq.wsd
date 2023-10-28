@@ -1,0 +1,11 @@
+@startuml
+Title Import and Export Inventory
+Actor Employee
+participant System
+
+Employee->System: Submit import/export invoices
+System->Employee: Review import/export invoices for accuracy and completeness
+System->Employee: Calculate import/export duties and taxes
+System->Employee: Generate and submit import/export invoice to employee
+
+@enduml

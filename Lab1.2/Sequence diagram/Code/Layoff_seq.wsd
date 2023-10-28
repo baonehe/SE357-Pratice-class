@@ -1,0 +1,17 @@
+@startuml
+title Lay Off 
+
+participant Manager
+participant HRSystem
+participant Employee
+Database database
+
+
+Manager -> HRSystem: Initiates lay off process for employee
+HRSystem -> Employee: Sends notification of lay off
+Employee --> HRSystem: Confirms or disputes lay off
+HRSystem --> Manager: Confirms or disputes lay off
+Manager -> HRSystem: Approves or denies lay off
+HRSystem -> Employee: Confirms or denies lay off
+HRSystem -> database: Delete information of employee (If laid off)
+@enduml

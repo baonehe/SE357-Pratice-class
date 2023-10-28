@@ -1,0 +1,19 @@
+@startuml
+title Make a plan to maintain devices sequence diagram
+
+Actor employee
+participant DeviceMonitor
+participant Manager
+participant Technician
+
+employee -> DeviceMonitor : Request device status
+DeviceMonitor --> employee : Send device status
+employee -> Manager : Request approval for maintenance plan
+Manager --> employee : Approve or reject maintenance plan
+employee -> Technician : Assign maintenance tasks
+Technician --> employee : Accept maintenance tasks
+Technician --> employee : Complete maintenance tasks
+employee -> Technician : Verify maintenance tasks
+employee -> DeviceMonitor : Update device status
+
+@enduml

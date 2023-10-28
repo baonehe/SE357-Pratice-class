@@ -1,0 +1,10 @@
+@startuml
+title Sign-out sequence diagram
+
+actor User
+participant System
+
+User -> System : Click sign-out button
+System -> User : Confirm sign-out
+
+@enduml

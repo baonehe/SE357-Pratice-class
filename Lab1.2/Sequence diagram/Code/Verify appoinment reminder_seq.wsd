@@ -1,0 +1,10 @@
+@startuml
+Title Verify appoinment reminder
+actor Patient
+participant System
+
+Patient-> System: Enter schedule information
+System --> Patient: Verify schedule information
+Patient -> System: Verify
+System --> Patient: Send appoinment reminders
+@enduml

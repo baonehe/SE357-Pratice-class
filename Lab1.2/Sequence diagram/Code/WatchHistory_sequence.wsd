@@ -1,0 +1,10 @@
+@startuml
+Title watching medical history
+
+actor patient
+participant System
+
+patient -> System: Select customer
+System -> System: Query customer's medical history
+System --> patient: Display customer's medical history
+@enduml

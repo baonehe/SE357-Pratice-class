@@ -1,0 +1,9 @@
+@startuml
+Title Track revenue
+actor Manager
+participant System
+
+Manager-> System: Selects start date and end date
+System -> Manager: Displays revenue and expense report for the selected period
+
+@enduml

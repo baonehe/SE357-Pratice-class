@@ -1,0 +1,12 @@
+@startuml
+Title Generate Financial Report
+Actor Manager
+participant System
+participant ReportGenerator
+
+Manager -> System: Requests to generate financial report
+System -> ReportGenerator: Sends request to generate report
+ReportGenerator --> System: Returns report
+System --> Manager: Displays report
+@enduml
+

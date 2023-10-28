@@ -1,0 +1,12 @@
+@startuml
+title Doctor follows progress of treatment plan sequence diagram
+
+Actor Doctor
+participant MedicalRecordSystem
+
+Doctor -> MedicalRecordSystem : Retrieve treatment plan
+MedicalRecordSystem --> Doctor : Send treatment plan
+Doctor -> MedicalRecordSystem : Update treatment plan as needed
+MedicalRecordSystem --> Doctor : Save updated treatment plan
+
+@enduml

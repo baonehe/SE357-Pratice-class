@@ -1,0 +1,27 @@
+@startuml
+title CRUD Prescription Sequence Diagram
+
+Actor Doctor
+participant PrescriptionSystem
+
+
+Doctor -> PrescriptionSystem: Create prescription
+PrescriptionSystem --> Doctor: Confirm prescription creation
+
+
+Doctor -> PrescriptionSystem: Get all prescriptions
+PrescriptionSystem --> Doctor: Send all prescriptions
+Doctor -> PrescriptionSystem: Get specific prescription
+PrescriptionSystem --> Doctor: Send specific prescription
+
+
+Doctor -> PrescriptionSystem: Request to update prescription
+PrescriptionSystem --> Doctor: Accept or reject request to update prescription
+PrescriptionSystem --> Doctor: Send updated prescription
+
+
+Doctor -> PrescriptionSystem: Request to delete prescription
+PrescriptionSystem --> Doctor: Accept or reject request to delete prescription
+PrescriptionSystem --> Doctor: Confirm prescription deletion
+
+@enduml

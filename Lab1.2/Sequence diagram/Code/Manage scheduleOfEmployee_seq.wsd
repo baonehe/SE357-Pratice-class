@@ -1,0 +1,16 @@
+@startuml
+title Manage Schedule of Employee Sequence Diagram
+
+Actor Manager
+participant SchedulingSystem
+participant Employee
+
+
+Manager -> SchedulingSystem: Creates or updates employee schedule
+SchedulingSystem -> Employee: Sends notification of updated schedule
+Employee --> SchedulingSystem: Confirms or disputes schedule update
+SchedulingSystem --> Manager: Confirms or disputes schedule update
+Manager -> SchedulingSystem: Approves or denies schedule update
+SchedulingSystem -> Employee: Confirms or denies schedule update
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+Title CRUD the patient schedule
+
+actor employee
+participant System
+Database database
+
+employee -> System: Sends request to create,read,update, or delete patient schedule
+System -> database:Require to get data
+database --> System:Send data
+System --> employee: Displays form to create,read,update, or delete patient schedule
+employee -> System: Enters enterprise data
+System --> employee: Confirms enterprise data
+employee -> System: Confirms to create,read,update, or delete patient schedule
+System-> database: Save data
+database --> System: Confirmation
+System --> employee: Returns result of creating,reading,updating, or deleting patient schedule
+@enduml
