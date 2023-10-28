@@ -1,0 +1,28 @@
+@startuml
+title CRUD equipment supply contract 
+
+actor Manager
+participant System
+database Database
+
+Manager -> System : Create Contract
+System -> Database : Save Contract
+Database --> System : Confirmation
+System --> Manager : Success Message
+
+Manager -> System : Read Contract
+System -> Database : Retrieve Contract
+Database --> System : Contract Data
+System --> Manager : Contract Details
+
+Manager -> System : Update Contract
+System -> Database : Modify Contract
+Database --> System : Confirmation
+System --> Manager : Success Message
+
+Manager -> System : Delete Contract
+System -> Database : Remove Contract
+Database --> System : Confirmation
+System --> Manager : Success Message
+
+@enduml

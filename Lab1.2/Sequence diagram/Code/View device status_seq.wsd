@@ -1,0 +1,15 @@
+@startuml
+title View device status sequence diagram
+
+Actor employee
+participant DeviceMonitor
+
+employee -> DeviceMonitor : Request device status
+DeviceMonitor --> employee : Authenticate employee
+employee -> DeviceMonitor : Provide credentials
+DeviceMonitor -> Device : Get device status
+Device --> DeviceMonitor : Send device status
+DeviceMonitor --> employee : Display device status
+employee -> DeviceMonitor : End view
+
+@enduml

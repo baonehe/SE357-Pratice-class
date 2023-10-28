@@ -1,0 +1,114 @@
+@startuml
+title Class Diagram to Support Dental Clinic Management with Manager Class
+
+class DentalClinic {
+  + id: int
+  + name: string
+  + address: string
+  + phone: string
+  + email: string
+  + website: string
+
+  + patients: List<Patient>
+  + staff: List<Staff>
+  + appointments: List<Appointment>
+  + treatments: List<Treatment>
+  + invoices: List<Invoice>
+  + manager: Manager
+
+  + addPatient(patient: Patient)
+  + removePatient(patient: Patient)
+  + getPatients(): List<Patient>
+
+  + addStaff(staff: Staff)
+  + removeStaff(staff: Staff)
+  + getStaff(): List<Staff>
+
+  + bookAppointment(patient: Patient, staff: Staff, treatment: Treatment, date: Date, time: Time)
+  + cancelAppointment(appointment: Appointment)
+  + getAppointments(): List<Appointment>
+
+  + addTreatment(treatment: Treatment)
+  + removeTreatment(treatment: Treatment)
+  + getTreatments(): List<Treatment>
+
+  + generateInvoice(patient: Patient, treatment: Treatment)
+  + getInvoices(): List<Invoice>
+}
+
+class Manager {
+  + id: int
+  + name: string
+  + jobTitle: string
+
+  + dentalClinic: DentalClinic
+
+  + layoff(staff: Staff)
+  + calculate_salary(staff: Staff)
+  + generate_finance_report()
+  + monitor_financial_revenue()
+}
+
+class Patient {
+  + id: int
+  + name: string
+  + dateOfBirth: Date
+  + address: string
+  + phone: string
+  + email: string
+  + insuranceInformation: string
+
+  + appointments: List<Appointment>
+
+  + bookAppointment(staff: Staff, treatment: Treatment, date: Date, time: Time)
+  + cancelAppointment(appointment: Appointment)
+  + getAppointments(): List<Appointment>
+}
+
+class Staff {
+  + id: int
+  + name: string
+  + jobTitle: string
+  + qualifications: string
+
+  + appointments: List<Appointment>
+
+  + bookAppointment(patient: Patient, treatment: Treatment, date: Date, time: Time)
+  + cancelAppointment(appointment: Appointment)
+  + getAppointments(): List<Appointment>
+}
+
+class Appointment {
+  + id: int
+  + patient: Patient
+  + staff: Staff
+  + treatment: Treatment
+  + date: Date
+  + time: Time
+  + status: string
+
+  + cancel()
+  + complete()
+}
+
+class Treatment {
+  + id: int
+  + name: string
+  + description: string
+  + price: float
+
+  + appointments: List<Appointment>
+}
+
+class Invoice {
+  + id: int
+  + patient: Patient
+  + treatment: Treatment
+  + amount: float
+  + dateIssued: Date
+  + dueDate: Date
+
+  + pay()
+}
+
+@enduml

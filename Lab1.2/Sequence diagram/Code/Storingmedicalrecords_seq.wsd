@@ -1,0 +1,17 @@
+
+@startuml
+title Storing medical records
+
+actor "Patient" as Patient
+participant "System" as system
+database "Databas" as db
+ Patient -> system: Require store medical record
+activate system
+system -> db: Store medical record
+activate db
+db --> system: Verify success
+deactivate db
+system --> Patient: Verify store success
+deactivate system
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+Title CRUD inventory
+Actor Manager
+participant System
+Database Warehouse
+
+Manager -> System: Adds new inventory item
+System -> Warehouse: Stores inventory item
+
+Warehouse -->System: Confirms inventory item stored
+System --> Manager: Returns inventory item ID
+
+Manager-> System: Updates inventory item
+System -> Warehouse: Updates inventory item
+Warehouse --> System: Confirms inventory item updated
+System --> Manager: Returns inventory item updated
+
+Manager-> System: Deletes inventory item
+System -> Warehouse: Deletes inventory item
+Warehouse --> System: Confirms inventory item deleted
+System --> Manager: Returns inventory item deleted
+
+Manager-> System: Requests inventory report
+System -> Warehouse: Retrieves inventory report
+Warehouse --> System: Returns inventory report
+System --> Manager: Displays inventory report
+@enduml

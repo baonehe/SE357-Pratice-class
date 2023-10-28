@@ -1,0 +1,17 @@
+@startuml
+Title CRUD the information of patient
+actor User
+participant System
+Database database
+
+User -> System: Sends request to create,read,update, or delete patient information
+System -> database:Require to get data
+database --> System:Send data
+System -> User: Displays form to create,read,update, or delete patient information
+User -> System: Enters patient data
+System -> User: Confirms patient data
+User -> System: Confirms to create,read,update, or delete patient information
+System-> database: Save data
+database --> System: Confirmation
+System --> User: Returns result of creating,reading,updating, or deleting patient information
+@enduml

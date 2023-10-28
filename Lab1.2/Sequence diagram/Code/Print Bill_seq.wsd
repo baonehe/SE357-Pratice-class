@@ -1,0 +1,12 @@
+@startuml
+title Print Bill Sequence Diagram
+
+Actor patient
+participant BillingSystem
+participant Printer
+
+patient -> BillingSystem: Request to print bill
+BillingSystem -> Printer: Send bill to printer
+Printer --> BillingSystem: Confirm bill printing
+BillingSystem --> patient: Confirm bill printing
+@enduml

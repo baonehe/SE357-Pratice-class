@@ -1,0 +1,18 @@
+@startuml
+Title CRUD the information of enterprise that clinic copperate with
+
+actor Manager
+participant System
+Database database
+
+Manager -> System: Sends request to create,read,update, or delete enterprise information
+System -> database:Require to get data
+database --> System:Send data
+System --> Manager: Displays form to create,read,update, or delete enterprise information
+Manager -> System: Enters enterprise data
+System --> Manager: Confirms enterprise data
+Manager -> System: Confirms to create,read,update, or delete enterprise information
+System-> database: Save data
+database --> System: Confirmation
+System --> Manager: Returns result of creating,reading,updating, or deleting enterprise information
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+title Evaluate services sequence diagram
+
+Actor Patient
+participant EvaluateService
+
+    Patient -> EvaluateService : Start Evaluation
+    Patient -> EvaluateService : Submit review
+    EvaluateService --> Patient : Request Additional Information
+    Patient -> EvaluateService : Provide Additional Information
+    EvaluateService --> Patient : Generate Evaluation Report
+    Patient -> EvaluateService : End Evaluation
+
+@enduml

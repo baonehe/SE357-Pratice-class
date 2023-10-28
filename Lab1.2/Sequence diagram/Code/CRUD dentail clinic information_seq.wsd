@@ -1,0 +1,28 @@
+@startuml
+title CRUD clinic information 
+
+actor Manager
+participant System
+Database Database
+
+Manager -> System : Create Clinic Information
+System -> Database : Save Clinic Information
+Database --> System : Confirmation
+System --> Manager : Success Message
+
+Manager -> System : Read Clinic Information
+System -> Database : Retrieve Clinic Information
+Database --> System : Clinic Information Data
+System --> Manager : Clinic Information
+
+Manager -> System : Update Clinic Information
+System -> Database : Modify Clinic Information
+Database --> System : Confirmation
+System --> Manager : Success Message
+
+Manager -> System : Delete Clinic Information
+System -> Database : Remove Clinic Information
+Database --> System : Confirmation
+System --> Manager : Success Message
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+title CRUD services contract with patient sequence diagram
+
+Actor Patient
+participant ServicesContractSystem
+
+
+Patient -> ServicesContractSystem : Request to create services contract
+ServicesContractSystem --> Patient : Confirm request to create services contract
+ServicesContractSystem --> Patient : Send services contract draft
+Patient -> ServicesContractSystem : Review services contract draft
+Patient -> ServicesContractSystem : Request changes to services contract draft
+ServicesContractSystem --> Patient : Accept or reject request to change services contract draft
+ServicesContractSystem --> Patient : Send updated services contract draft
+Patient -> ServicesContractSystem : Accept or reject services contract
+ServicesContractSystem --> Patient : Confirm services contract creation
+
+
+Patient -> ServicesContractSystem : Request to get all services contracts
+ServicesContractSystem --> Patient : Send all services contracts
+Patient -> ServicesContractSystem : Request to get specific services contract
+ServicesContractSystem --> Patient : Send specific services contract
+
+
+Patient -> ServicesContractSystem : Request to update services contract
+ServicesContractSystem --> Patient : Accept or reject request to update services contract
+ServicesContractSystem --> Patient : Send updated services contract draft
+Patient -> ServicesContractSystem : Review updated services contract draft
+Patient -> ServicesContractSystem : Accept or reject updated services contract
+ServicesContractSystem --> Patient : Confirm services contract update
+
+
+Patient -> ServicesContractSystem : Request to delete services contract
+ServicesContractSystem --> Patient : Accept or reject request to delete services contract
+ServicesContractSystem --> Patient : Confirm services contract deletion
+
+@enduml

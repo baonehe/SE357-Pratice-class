@@ -1,0 +1,36 @@
+@startuml
+title CRUD marketing sequence diagram with manager
+
+Actor User
+participant Manager
+participant MarketingSystem
+
+
+User -> Manager : Request to create marketing campaign
+Manager --> User : Approve or reject request
+Manager -> MarketingSystem : Create marketing campaign (if approved)
+MarketingSystem --> User : Confirm marketing campaign creation
+
+
+User -> Manager : Request to get all marketing campaigns
+Manager --> User : Approve or reject request
+Manager -> MarketingSystem : Get all marketing campaigns (if approved)
+MarketingSystem --> User : Send all marketing campaigns
+User -> Manager : Request to get specific marketing campaign
+Manager --> User : Approve or reject request
+Manager -> MarketingSystem : Get specific marketing campaign (if approved)
+MarketingSystem --> User : Send specific marketing campaign
+
+
+User -> Manager : Request to update marketing campaign
+Manager --> User : Approve or reject request
+Manager -> MarketingSystem : Update marketing campaign (if approved)
+MarketingSystem --> User : Confirm marketing campaign update
+
+
+User -> Manager : Request to delete marketing campaign
+Manager --> User : Approve or reject request
+Manager -> MarketingSystem : Delete marketing campaign (if approved)
+MarketingSystem --> User : Confirm marketing campaign deletion
+
+@enduml

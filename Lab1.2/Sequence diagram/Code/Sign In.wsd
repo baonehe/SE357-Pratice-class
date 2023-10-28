@@ -1,0 +1,13 @@
+@startuml
+title Sign-in 
+
+actor User
+participant System
+Database Database
+
+User -> System : Enter credentials
+System -> Database : Check credentials
+Database --> System : Return result
+System --> User : Display message
+
+@enduml

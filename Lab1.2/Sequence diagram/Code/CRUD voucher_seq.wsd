@@ -1,0 +1,25 @@
+@startuml
+title CRUD voucher sequence diagram
+
+Actor Manager
+participant VoucherSystem
+
+
+Manager -> VoucherSystem : Create voucher
+VoucherSystem --> Manager : Confirm voucher creation
+
+
+Manager -> VoucherSystem : Get all vouchers
+VoucherSystem --> Manager : Send all vouchers
+Manager -> VoucherSystem : Get specific voucher
+VoucherSystem --> Manager : Send specific voucher
+
+
+Manager -> VoucherSystem : Update voucher
+VoucherSystem --> Manager : Confirm voucher update
+
+
+Manager -> VoucherSystem : Delete voucher
+VoucherSystem --> Manager : Confirm voucher deletion
+
+@enduml

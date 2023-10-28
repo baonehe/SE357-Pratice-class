@@ -1,0 +1,17 @@
+
+@startuml
+title Print medical records sequence diagram
+
+Actor Patient
+participant MedicalRecordsSystem
+
+Patient -> MedicalRecordsSystem : Request medical records
+MedicalRecordsSystem --> Patient : Authenticate patient
+Patient -> MedicalRecordsSystem : Provide credentials
+MedicalRecordsSystem --> Patient : Retrieve medical records
+MedicalRecordsSystem --> Patient : Send medical records
+Patient -> MedicalRecordsSystem : Require to print medical records
+MedicalRecordsSystem --> Patient : Print medical records
+Patient -> MedicalRecordsSystem : End print
+
+@enduml

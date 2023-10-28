@@ -1,0 +1,14 @@
+@startuml
+title Data encryption sequence diagram
+
+actor User
+participant System
+Database Database
+
+User -> System : Enter data to encrypt
+System -> Database : Generate encryption key
+Database --> System : Return key
+System -> System : Encrypt data using key
+System --> User : Display encrypted data
+
+@enduml

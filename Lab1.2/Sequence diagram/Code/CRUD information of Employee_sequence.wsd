@@ -1,0 +1,17 @@
+@startuml
+Title CRUD the information of employee
+actor Manager
+participant System
+Database database
+
+Manager -> System: Sends request to create,read,update, or delete employee information
+System -> database:Require to get data
+database --> System:Send data
+System -> Manager: Displays form to create,read,update, or delete employee information
+Manager -> System: Enters employee data
+System -> Manager: Confirms employee data
+Manager -> System: Confirms to create,read,update, or delete employee information
+System-> database: Save data
+database --> System: Confirmation
+System --> Manager: Returns result of creating,reading,updating, or deleting employee information
+@enduml
