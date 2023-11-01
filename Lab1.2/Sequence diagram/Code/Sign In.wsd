@@ -1,13 +1,20 @@
 @startuml
-title Sign-in 
+title Sign-in Sequence Diagram
 
 actor User
 participant System
 Database Database
 
 User -> System : Enter credentials
+activate User
+activate System
+
 System -> Database : Check credentials
+activate Database
 Database --> System : Return result
+deactivate 
 System --> User : Display message
 
+deactivate System
+deactivate User
 @enduml

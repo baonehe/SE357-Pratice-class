@@ -5,32 +5,53 @@ Actor User
 participant Manager
 participant MarketingSystem
 
+User -> Manager: Request to create marketing campaign
+activate Manager
+Manager --> User: Approve or reject request
+User -> Manager: Confirm marketing campaign creation (if approved)
+Manager -> MarketingSystem: Create marketing campaign (if approved)
+activate MarketingSystem
+MarketingSystem --> Manager: Confirmation
+deactivate MarketingSystem
+deactivate Manager
 
-User -> Manager : Request to create marketing campaign
-Manager --> User : Approve or reject request
-Manager -> MarketingSystem : Create marketing campaign (if approved)
-MarketingSystem --> User : Confirm marketing campaign creation
+User -> Manager: Request to get all marketing campaigns
+activate Manager
+Manager --> User: Approve or reject request
+User -> Manager: Confirm request (if approved)
+Manager -> MarketingSystem: Get all marketing campaigns (if approved)
+activate MarketingSystem
+MarketingSystem --> Manager: Send all marketing campaigns
+deactivate MarketingSystem
+deactivate Manager
 
+User -> Manager: Request to get specific marketing campaign
+activate Manager
+Manager --> User: Approve or reject request
+User -> Manager: Confirm request (if approved)
+Manager -> MarketingSystem: Get specific marketing campaign (if approved)
+activate MarketingSystem
+MarketingSystem --> Manager: Send specific marketing campaign
+deactivate MarketingSystem
+deactivate Manager
 
-User -> Manager : Request to get all marketing campaigns
-Manager --> User : Approve or reject request
-Manager -> MarketingSystem : Get all marketing campaigns (if approved)
-MarketingSystem --> User : Send all marketing campaigns
-User -> Manager : Request to get specific marketing campaign
-Manager --> User : Approve or reject request
-Manager -> MarketingSystem : Get specific marketing campaign (if approved)
-MarketingSystem --> User : Send specific marketing campaign
+User -> Manager: Request to update marketing campaign
+activate Manager
+Manager --> User: Approve or reject request
+User -> Manager: Confirm marketing campaign update (if approved)
+Manager -> MarketingSystem: Update marketing campaign (if approved)
+activate MarketingSystem
+MarketingSystem --> Manager: Confirmation
+deactivate MarketingSystem
+deactivate Manager
 
-
-User -> Manager : Request to update marketing campaign
-Manager --> User : Approve or reject request
-Manager -> MarketingSystem : Update marketing campaign (if approved)
-MarketingSystem --> User : Confirm marketing campaign update
-
-
-User -> Manager : Request to delete marketing campaign
-Manager --> User : Approve or reject request
-Manager -> MarketingSystem : Delete marketing campaign (if approved)
-MarketingSystem --> User : Confirm marketing campaign deletion
-
+User -> Manager: Request to delete marketing campaign
+activate Manager
+Manager --> User: Approve or reject request
+User -> Manager: Confirm request (if approved)
+Manager -> MarketingSystem: Delete marketing campaign (if approved)
+activate MarketingSystem
+MarketingSystem --> Manager: Confirmation
+deactivate MarketingSystem
+deactivate Manager
 @enduml

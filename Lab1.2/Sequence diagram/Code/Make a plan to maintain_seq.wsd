@@ -7,13 +7,24 @@ participant Manager
 participant Technician
 
 employee -> DeviceMonitor : Request device status
+activate employee
+activate DeviceMonitor
 DeviceMonitor --> employee : Send device status
+deactivate DeviceMonitor
 employee -> Manager : Request approval for maintenance plan
+activate Manager
 Manager --> employee : Approve or reject maintenance plan
+deactivate Manager
 employee -> Technician : Assign maintenance tasks
+activate Technician
 Technician --> employee : Accept maintenance tasks
 Technician --> employee : Complete maintenance tasks
+deactivate Technician
 employee -> Technician : Verify maintenance tasks
+activate Technician
+deactivate Technician
 employee -> DeviceMonitor : Update device status
-
+activate DeviceMonitor
+deactivate DeviceMonitor
+deactivate employee
 @enduml

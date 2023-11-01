@@ -5,6 +5,9 @@ actor User
 participant System
 
 User -> System : Click sign-out button
+activate System
+activate User
 System -> User : Confirm sign-out
-
+deactivate User
+deactivate System
 @enduml
