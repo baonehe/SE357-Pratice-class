@@ -68,6 +68,10 @@ class Patient {
 class Staff {
   + id: int
   + name: string
+  +address:string
+  +salary:money
+  +phone:string
+  +email:string
   + jobTitle: string
   + qualifications: string
 
@@ -96,6 +100,7 @@ class Treatment {
   + name: string
   + description: string
   + price: float
+  + NumOfDay:int
 
   + appointments: List<Appointment>
 }
@@ -107,8 +112,10 @@ class Invoice {
   + amount: float
   + dateIssued: Date
   + dueDate: Date
+  + status:string
 
   + pay()
+  + bool checkStatus()
 }
 
 @enduml
