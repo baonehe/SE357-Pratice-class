@@ -4,7 +4,11 @@ actor Patient
 participant System
 
 Patient-> System: Enter schedule information
+activate Patient
+activate System
 System --> Patient: Verify schedule information
 Patient -> System: Verify
 System --> Patient: Send appoinment reminders
+deactivate System
+deactivate Patient
 @enduml

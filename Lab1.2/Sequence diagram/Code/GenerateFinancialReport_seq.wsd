@@ -5,8 +5,13 @@ participant System
 participant ReportGenerator
 
 Manager -> System: Requests to generate financial report
+activate Manager
+activate System
 System -> ReportGenerator: Sends request to generate report
+activate ReportGenerator
 ReportGenerator --> System: Returns report
+deactivate ReportGenerator
 System --> Manager: Displays report
+deactivate System
+deactivate Manager
 @enduml
-

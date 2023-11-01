@@ -1,17 +1,20 @@
-
 @startuml
-title Storing medical records
+title Storing Medical Records Sequence Diagram
 
 actor "Patient" as Patient
 participant "System" as system
-database "Databas" as db
- Patient -> system: Require store medical record
+database "Database" as db
+
+Patient -> system: Require store medical record
+activate Patient
 activate system
+
 system -> db: Store medical record
 activate db
 db --> system: Verify success
 deactivate db
+
 system --> Patient: Verify store success
 deactivate system
-
+deactivate Patient
 @enduml

@@ -5,9 +5,14 @@ Actor Patient
 participant DentalClinicSystem
 
 Patient -> DentalClinicSystem: Request to pay dental clinic fees
-DentalClinicSystem --> Patient: Display payment BiLL
-Patient -> DentalClinicSystem: Approve or deny BiLL
-DentalClinicSystem --> Patient: Process payment ( if approved)
+activate Patient
+activate DentalClinicSystem
+
+DentalClinicSystem --> Patient: Display payment bill
+Patient -> DentalClinicSystem: Approve or deny bill
+DentalClinicSystem --> Patient: Process payment (if approved)
 DentalClinicSystem --> Patient: Confirm payment success
 
+deactivate DentalClinicSystem
+deactivate Patient
 @enduml

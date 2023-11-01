@@ -6,9 +6,14 @@ participant System
 Database Database
 
 User -> System : Enter data to encrypt
+activate User
+activate System
 System -> Database : Generate encryption key
+activate Database
 Database --> System : Return key
+deactivate Database
 System -> System : Encrypt data using key
 System --> User : Display encrypted data
-
+deactivate System
+deactivate User
 @enduml

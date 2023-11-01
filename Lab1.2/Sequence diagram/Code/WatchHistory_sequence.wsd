@@ -5,6 +5,10 @@ actor patient
 participant System
 
 patient -> System: Select customer
+activate patient
+activate System
 System -> System: Query customer's medical history
 System --> patient: Display customer's medical history
+deactivate System
+deactivate patient
 @enduml

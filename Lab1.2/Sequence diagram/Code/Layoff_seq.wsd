@@ -6,12 +6,23 @@ participant HRSystem
 participant Employee
 Database database
 
-
 Manager -> HRSystem: Initiates lay off process for employee
+activate Manager
+activate HRSystem
+
 HRSystem -> Employee: Sends notification of lay off
+activate Employee
 Employee --> HRSystem: Confirms or disputes lay off
+deactivate Employee
 HRSystem --> Manager: Confirms or disputes lay off
 Manager -> HRSystem: Approves or denies lay off
 HRSystem -> Employee: Confirms or denies lay off
+activate Employee
+deactivate Employee
 HRSystem -> database: Delete information of employee (If laid off)
+
+deactivate Manager
+activate database
+database --> HRSystem: confirm successfully
+deactivate HRSystem
 @enduml

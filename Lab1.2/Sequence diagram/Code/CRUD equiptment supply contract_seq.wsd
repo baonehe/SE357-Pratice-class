@@ -1,28 +1,43 @@
 @startuml
-title CRUD equipment supply contract 
+title CRUD equipment supply contract
 
 actor Manager
 participant System
 database Database
 
-Manager -> System : Create Contract
-System -> Database : Save Contract
-Database --> System : Confirmation
-System --> Manager : Success Message
+Manager -> System: Create Contract
+activate System
+System -> Database: Save Contract
+activate Database
+Database --> System: Confirmation
+deactivate Database
+System --> Manager: Success Message
+deactivate System
 
-Manager -> System : Read Contract
-System -> Database : Retrieve Contract
-Database --> System : Contract Data
-System --> Manager : Contract Details
+Manager -> System: Read Contract
+activate System
+System -> Database: Retrieve Contract
+activate Database
+Database --> System: Contract Data
+deactivate Database
+System --> Manager: Contract Details
+deactivate System
 
-Manager -> System : Update Contract
-System -> Database : Modify Contract
-Database --> System : Confirmation
-System --> Manager : Success Message
+Manager -> System: Update Contract
+activate System
+System -> Database: Modify Contract
+activate Database
+Database --> System: Confirmation
+deactivate Database
+System --> Manager: Success Message
+deactivate System
 
-Manager -> System : Delete Contract
-System -> Database : Remove Contract
-Database --> System : Confirmation
-System --> Manager : Success Message
-
+Manager -> System: Delete Contract
+activate System
+System -> Database: Remove Contract
+activate Database
+Database --> System: Confirmation
+deactivate Database
+System --> Manager: Success Message
+deactivate System
 @enduml

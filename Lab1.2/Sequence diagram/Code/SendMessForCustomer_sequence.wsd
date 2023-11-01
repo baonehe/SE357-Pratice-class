@@ -1,9 +1,0 @@
-@startuml
-Title Send Messenger for Customer
-actor employee
-participant System
-
-employee -> System: Enter customer information and message, email content
-System -> System: Create message, email
-System -> patient: Send message, email to customer
-@enduml

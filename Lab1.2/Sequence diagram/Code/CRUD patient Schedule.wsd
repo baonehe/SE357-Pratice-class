@@ -5,14 +5,26 @@ actor employee
 participant System
 Database database
 
-employee -> System: Sends request to create,read,update, or delete patient schedule
-System -> database:Require to get data
-database --> System:Send data
-System --> employee: Displays form to create,read,update, or delete patient schedule
-employee -> System: Enters enterprise data
-System --> employee: Confirms enterprise data
-employee -> System: Confirms to create,read,update, or delete patient schedule
+employee -> System: Sends request to create, read, update, or delete patient schedule
+activate employee
+activate System
+employee -> System: Enters patient schedule data
+System -> database: Require to get data
+activate database
+database --> System: Send data
+deactivate database
+System --> employee: Displays form to create, read, update, or delete patient schedule
+deactivate System
+deactivate employee
+
+employee -> System: Confirms to create, read, update, or delete patient schedule
+activate employee
+activate System
 System-> database: Save data
+activate database
 database --> System: Confirmation
-System --> employee: Returns result of creating,reading,updating, or deleting patient schedule
+deactivate database
+System --> employee: Returns result of creating, reading, updating, or deleting patient schedule
+deactivate System
+deactivate employee
 @enduml

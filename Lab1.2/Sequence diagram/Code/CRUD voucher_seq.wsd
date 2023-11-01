@@ -4,22 +4,38 @@ title CRUD voucher sequence diagram
 Actor Manager
 participant VoucherSystem
 
-
 Manager -> VoucherSystem : Create voucher
+activate Manager
+activate VoucherSystem
 VoucherSystem --> Manager : Confirm voucher creation
-
+deactivate VoucherSystem
+deactivate Manager
 
 Manager -> VoucherSystem : Get all vouchers
+activate Manager
+activate VoucherSystem
 VoucherSystem --> Manager : Send all vouchers
-Manager -> VoucherSystem : Get specific voucher
-VoucherSystem --> Manager : Send specific voucher
+deactivate VoucherSystem
+deactivate Manager
 
+Manager -> VoucherSystem : Get specific voucher
+activate Manager
+activate VoucherSystem
+VoucherSystem --> Manager : Send specific voucher
+deactivate VoucherSystem
+deactivate Manager
 
 Manager -> VoucherSystem : Update voucher
+activate Manager
+activate VoucherSystem
 VoucherSystem --> Manager : Confirm voucher update
-
+deactivate VoucherSystem
+deactivate Manager
 
 Manager -> VoucherSystem : Delete voucher
+activate Manager
+activate VoucherSystem
 VoucherSystem --> Manager : Confirm voucher deletion
-
+deactivate VoucherSystem
+deactivate Manager
 @enduml
