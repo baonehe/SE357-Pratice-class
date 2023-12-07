@@ -125,10 +125,10 @@ class Invoice {
   + pay()
   + bool checkStatus()
 }
-DentalClinic --|> Manager
+DentalClinic "1" -- "1" Manager
 DentalClinic "1" -- "n" Staff
-Staff --|> Doctor
-Staff --|> OrdinaryEmployee
+Doctor --|> Staff
+OrdinaryEmployee --|> Staff
 Patient "1" -- "n" Appointment
 Staff "1" -- "n" Appointment
 Treatment "1" -- "n" Appointment
