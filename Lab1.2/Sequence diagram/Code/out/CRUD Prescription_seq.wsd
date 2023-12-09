@@ -1,0 +1,76 @@
+@startuml
+title CRUD Prescription Sequence Diagram
+
+actor Doctor
+participant PrescriptionSystem
+database Database
+
+alt "Create Prescription"
+  Doctor -> PrescriptionSystem: Create prescription
+  activate Doctor
+  activate PrescriptionSystem
+  PrescriptionSystem -> Database: Save prescription information
+  activate Database
+  Database --> PrescriptionSystem: Confirmation
+  deactivate Database
+  alt Success
+    PrescriptionSystem --> Doctor: Confirmation Message
+  else Failure
+    PrescriptionSystem --> Doctor: Failure Message
+  end
+  deactivate Doctor
+  deactivate PrescriptionSystem
+end
+
+alt "Read Prescription"
+  Doctor -> PrescriptionSystem: Read prescription
+  activate Doctor
+  activate PrescriptionSystem
+  PrescriptionSystem -> Database: Retrieve prescription information
+  activate Database
+  Database --> PrescriptionSystem: Prescription Data
+  deactivate Database
+  alt Success
+    PrescriptionSystem --> Doctor: Display prescription information
+  else Failure
+    PrescriptionSystem --> Doctor: Failure Message
+  end
+  deactivate Doctor
+  deactivate PrescriptionSystem
+end
+
+alt "Update Prescription"
+  Doctor -> PrescriptionSystem: Update prescription
+  activate Doctor
+  activate PrescriptionSystem
+  PrescriptionSystem -> Database: Modify prescription information
+  activate Database
+  Database --> PrescriptionSystem: Confirmation
+  deactivate Database
+  alt Success
+    PrescriptionSystem --> Doctor: Confirmation Message
+  else Failure
+    PrescriptionSystem --> Doctor: Failure Message
+  end
+  deactivate Doctor
+  deactivate PrescriptionSystem
+end
+
+alt "Delete Prescription"
+  Doctor -> PrescriptionSystem: Delete prescription
+  activate Doctor
+  activate PrescriptionSystem
+  PrescriptionSystem -> Database: Remove prescription information
+  activate Database
+  Database --> PrescriptionSystem: Confirmation
+  deactivate Database
+  alt Success
+    PrescriptionSystem --> Doctor: Confirmation Message
+  else Failure
+    PrescriptionSystem --> Doctor: Failure Message
+  end
+  deactivate Doctor
+  deactivate PrescriptionSystem
+end
+
+@enduml
