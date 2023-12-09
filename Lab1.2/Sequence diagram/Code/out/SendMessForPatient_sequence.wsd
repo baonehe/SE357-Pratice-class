@@ -1,0 +1,17 @@
+@startuml
+Title Send Messenger for Patient
+actor employee
+participant System
+
+employee -> System: Enter Patient information and message , email content
+alt "patient exist"
+activate System
+System -> System: Create message,email
+System -> Patient: Send message,email to Patient
+else  "patient don't exist"
+System --> employee: Enter information again
+end
+activate Patient
+deactivate System
+deactivate Patient
+@enduml

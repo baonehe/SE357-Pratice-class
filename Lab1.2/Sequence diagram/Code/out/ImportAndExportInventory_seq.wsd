@@ -1,0 +1,28 @@
+@startuml
+Title Import and Export Inventory
+Actor Employee
+participant System
+
+
+  Employee->System: Submit import/export information
+  activate Employee
+  activate System
+
+  alt "Review Invoices and Calculate"
+    System-->Employee: Review import/export invoices for accuracy and completeness
+    System-->Employee: Calculate import/export duties and taxes
+    alt "Calculation Correct"
+      System-->Employee: Generate and submit import/export invoice to employee
+    else "Calculation Incorrect"
+      System-->Employee: Request employee to resubmit information
+      deactivate System
+      deactivate Employee
+    end
+  end
+
+  deactivate System
+  deactivate Employee
+
+
+@enduml
+ 

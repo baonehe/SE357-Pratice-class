@@ -1,0 +1,21 @@
+@startuml
+title Pay Dental Clinic Fees Sequence Diagram
+
+Actor Patient
+participant DentalClinicSystem
+
+Patient -> DentalClinicSystem: Request to pay dental clinic fees
+activate Patient
+activate DentalClinicSystem
+
+DentalClinicSystem --> Patient: Display payment bill
+Patient -> DentalClinicSystem: Approve or deny bill
+alt "Approved"
+DentalClinicSystem --> Patient: Process payment 
+DentalClinicSystem --> Patient: Confirm payment success
+else "Denied"
+DentalClinicSystem --> Patient: Calculate again
+end
+deactivate DentalClinicSystem
+deactivate Patient
+@enduml

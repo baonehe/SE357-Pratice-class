@@ -1,0 +1,23 @@
+@startuml
+title Sign-in Sequence Diagram
+
+actor User
+participant System
+Database Database
+
+User -> System : Enter credentials
+activate User
+activate System
+
+System -> Database : Check credentials
+activate Database
+Database --> System : Return result
+deactivate 
+alt "True"
+System --> User : Display success message 
+else "False"
+System --> User : Display unsuccess message 
+end
+deactivate System
+deactivate User
+@enduml

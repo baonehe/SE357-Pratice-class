@@ -1,0 +1,76 @@
+@startuml
+title CRUD Voucher Sequence Diagram
+
+actor Manager
+participant VoucherSystem
+database Database
+
+alt "Create Voucher"
+  Manager -> VoucherSystem: Create Voucher
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Save Voucher information
+  activate Database
+  Database --> VoucherSystem: Confirmation
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Confirmation Message
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+alt "Read Voucher"
+  Manager -> VoucherSystem: Read Voucher
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Retrieve Voucher information
+  activate Database
+  Database --> VoucherSystem: Voucher Data
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Display Voucher information
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+alt "Update Voucher"
+  Manager -> VoucherSystem: Update Voucher
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Modify Voucher information
+  activate Database
+  Database --> VoucherSystem: Confirmation
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Confirmation Message
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+alt "Delete Voucher"
+  Manager -> VoucherSystem: Delete Voucher
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Remove Voucher information
+  activate Database
+  Database --> VoucherSystem: Confirmation
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Confirmation Message
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+@enduml

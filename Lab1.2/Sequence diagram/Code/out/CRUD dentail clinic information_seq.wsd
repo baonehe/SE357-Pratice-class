@@ -1,0 +1,68 @@
+@startuml
+title CRUD clinic information
+
+actor Manager
+participant System
+Database Database
+
+alt "Create Clinic Information"
+  Manager -> System: Create Clinic Information
+  activate System
+  System -> Database: Save Clinic Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Read Clinic Information"
+  Manager -> System: Read Clinic Information
+  activate System
+  System -> Database: Retrieve Clinic Information
+  activate Database
+  Database --> System: Clinic Information Data
+  deactivate Database
+  alt Success
+    System --> Manager: Clinic Information
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Update Clinic Information"
+  Manager -> System: Update Clinic Information
+  activate System
+  System -> Database: Modify Clinic Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Delete Clinic Information"
+  Manager -> System: Delete Clinic Information
+  activate System
+  System -> Database: Remove Clinic Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+@enduml

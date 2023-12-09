@@ -1,0 +1,25 @@
+@startuml
+title Doctor follows progress of treatment plan sequence diagram
+
+actor Doctor
+participant MedicalRecordSystem
+
+
+  Doctor -> MedicalRecordSystem : Retrieve treatment plan
+  activate Doctor
+  activate MedicalRecordSystem
+  alt "Treatment Plan Found"
+    MedicalRecordSystem --> Doctor : Send treatment plan
+    Doctor -> MedicalRecordSystem : Update treatment plan as needed
+    alt "Update Successful"
+      Doctor --> MedicalRecordSystem : Success Message ("Update successful")
+    else "Update Unsuccessful"
+      MedicalRecordSystem --> Doctor : Error Message ("Update unsuccessful")
+    end
+  else "Treatment Plan Not Found"
+    MedicalRecordSystem --> Doctor : Error Message ("Treatment plan not found")
+  end
+  deactivate MedicalRecordSystem
+  deactivate Doctor
+
+@enduml

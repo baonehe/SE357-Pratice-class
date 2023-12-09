@@ -1,0 +1,35 @@
+@startuml
+title Plan Treatment for Patient Sequence Diagram
+
+actor Patient
+participant System
+participant Doctor
+participant EvaluateService
+
+Patient -> System : Request treatment plan
+activate Patient
+activate System
+
+System -> Doctor : Send requirement
+System --> Patient : Gather patient information
+
+Patient -> System : Provide information
+System -> Doctor : Send information
+deactivate System
+
+Doctor -> EvaluateService : Request evaluation
+activate Doctor
+activate EvaluateService
+
+EvaluateService --> Doctor : Generate evaluation report
+deactivate EvaluateService
+Doctor --> Patient : Review evaluation report
+Doctor --> Patient : Discuss treatment options
+Doctor --> Patient : Create treatment plan
+Patient -> Doctor : Accept or reject treatment plan
+alt "accept"
+Doctor --> Patient : Schedule follow-up appointment
+end
+deactivate Doctor
+deactivate Patient
+@enduml

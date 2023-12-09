@@ -1,0 +1,18 @@
+@startuml
+Title Watching medical history
+
+actor patient
+participant System
+
+patient -> System: Select medical history
+activate patient
+activate System
+System -> System: Query patient's medical history
+alt "Success"
+System --> patient: Display patient's medical history
+else "Fail"
+System --> patient: request to do again
+end
+deactivate System
+deactivate patient
+@enduml

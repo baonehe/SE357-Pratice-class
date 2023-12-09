@@ -1,0 +1,23 @@
+@startuml
+title Calculate Salary
+
+actor Manager
+participant PayrollSystem
+
+Manager -> PayrollSystem: Enter employee ID
+activate Manager
+activate PayrollSystem
+
+Manager -> PayrollSystem: Sends request to calculate salary
+PayrollSystem --> Manager: Retrieves employee data (e.g., job title, years of experience, etc.)
+
+alt Employee Found
+  PayrollSystem --> Manager: Calculates salary based on employee data
+  PayrollSystem --> Manager: Sends calculated salary to employee
+else Employee Not Found
+  PayrollSystem --> Manager: Employee not found
+end
+
+deactivate Manager
+deactivate PayrollSystem
+@enduml
