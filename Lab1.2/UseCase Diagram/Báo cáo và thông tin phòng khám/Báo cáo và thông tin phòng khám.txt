@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+actor "Manager" as manager
+actor "Staff" as employee
+rectangle "Báo cáo và thông tin phòng khám" {
+  usecase "Lập báo cáo tài chính " as createReport
+  usecase "Lập phiếu nhập xuất kho" as createWarehouseReceipt
+  usecase "Xem Báo Cáo" as viewReport
+  usecase "Xem Báo cáo nhập xuất kho" as viewWarehouseReceipt
+  usecase "Lập kế hoạch bảo dưỡng thiết bị" as Planequipmentmaintenance
+  usecase " CRUD thông tin phòng khám " as infomation 
+  usecase " CRUD thiết bị nha khoa " as dentalequipment
+}
+
+manager --> viewReport
+manager --> viewWarehouseReceipt
+manager --> infomation
+manager --> dentalequipment
+
+employee --> createWarehouseReceipt
+employee --> createReport
+employee --> Planequipmentmaintenance
+employee --> dentalequipment
+
+
+
+@enduml

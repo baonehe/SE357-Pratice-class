@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+actor "Manager" as manager
+
+rectangle "Quản lý nhân viên" {
+  usecase "CRUD thông tin nhân viên" as CRUDinfomationstaff
+  usecase "Quản lý lịch làm việc nhân viên" as employeeworkschedule
+  usecase " Tính lương " as payroll 
+  usecase " Sa thải " as dismissal
+}
+
+manager --> CRUDinfomationstaff
+manager --> employeeworkschedule
+manager --> payroll
+manager --> dismissal
+
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+actor "Bệnh nhân" as patinent
+actor "Staff" as employee
+rectangle "Thanh toán và phản hồi dịch vụ" {
+  usecase "Thanh toán viện phí " as payfee
+  usecase " Phản hồi dịch vụ" as servicefeedback
+  usecase "In hóa đơn " as printbill
+  payfee ..> printbill : <<include>>
+  servicefeedback ..> (Xem phản hồi) : <<extend>>
+}
+
+patinent --> payfee
+patinent --> servicefeedback
+
+employee --> (Xem phản hồi)
+
+
+@enduml

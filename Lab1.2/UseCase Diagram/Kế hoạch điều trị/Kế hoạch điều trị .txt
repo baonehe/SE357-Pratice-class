@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor "Nhân viên" as staff
+actor "Bệnh nhân " as patinent
+rectangle "Kế hoạch điều trị " {
+  usecase "Nhắn tin giữa nhân viên và bệnh nhân" as message
+  usecase "CRUD lịch hẹn" as appointmentschedule 
+  usecase " Gửi thông báo lịch hẹn " as Sendappointmentnotification 
+  usecase " CRUD đơn thuốc " as prescription
+  usecase " Lập kế hoạch điều trị " as treatmentplanning
+  usecase " In hồ sơ bệnh án " as Printmedicalrecords
+}
+  patinent --> message
+  staff --> message
+  staff --> appointmentschedule
+  staff --> Sendappointmentnotification 
+  staff --> treatmentplanning
+  staff --> prescription
+  staff --> Printmedicalrecords
+  
+
+
+@enduml
