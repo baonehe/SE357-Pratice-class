@@ -1,0 +1,23 @@
+@startuml
+title Sign-out sequence diagram
+
+actor User
+participant System
+
+
+  User -> System: Click sign-out button
+  activate System
+  activate User
+  System --> User: show options "confirm" or "cancel"
+  User -> System : send option
+  alt "Confirm Sign-out"
+    System --> User: Confirm sign-out
+  else "Cancel Sign-out"
+    System --> User: Cancel sign-out
+    
+  end
+
+  deactivate System
+deactivate User
+
+@enduml

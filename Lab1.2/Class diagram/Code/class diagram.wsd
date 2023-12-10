@@ -68,10 +68,10 @@ class Patient {
 class Staff {
   + id: int
   + name: string
-  +address:string
-  +salary:money
-  +phone:string
-  +email:string
+  + address: string
+  + salary: money
+  + phone: string
+  + email: string
   + jobTitle: string
   + qualifications: string
 
@@ -80,6 +80,14 @@ class Staff {
   + bookAppointment(patient: Patient, treatment: Treatment, date: Date, time: Time)
   + cancelAppointment(appointment: Appointment)
   + getAppointments(): List<Appointment>
+}
+
+class Doctor {
+  + specialization: string
+}
+
+class OrdinaryEmployee {
+  + department: string
 }
 
 class Appointment {
@@ -100,7 +108,7 @@ class Treatment {
   + name: string
   + description: string
   + price: float
-  + NumOfDay:int
+  + NumOfDay: int
 
   + appointments: List<Appointment>
 }
@@ -112,10 +120,17 @@ class Invoice {
   + amount: float
   + dateIssued: Date
   + dueDate: Date
-  + status:string
+  + status: string
 
   + pay()
   + bool checkStatus()
 }
-
+DentalClinic "1" -- "1" Manager
+DentalClinic "1" -- "n" Staff
+Doctor --|> Staff
+OrdinaryEmployee --|> Staff
+Patient "1" -- "n" Appointment
+Staff "1" -- "n" Appointment
+Treatment "1" -- "n" Appointment
+Patient "1" -- "n" Invoice
 @enduml

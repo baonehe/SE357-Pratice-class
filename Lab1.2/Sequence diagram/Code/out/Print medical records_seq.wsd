@@ -1,0 +1,25 @@
+@startuml
+title Print Medical Records Sequence Diagram
+
+Actor Patient
+participant MedicalRecordsSystem
+
+Patient -> MedicalRecordsSystem : Request medical records
+activate Patient
+activate MedicalRecordsSystem
+
+MedicalRecordsSystem --> Patient : Authenticate patient
+Patient -> MedicalRecordsSystem : Provide credentials
+
+alt "Correct Authentication"
+MedicalRecordsSystem --> Patient : Retrieve medical records
+MedicalRecordsSystem --> Patient : Send medical records
+Patient -> MedicalRecordsSystem : Require to print medical records
+MedicalRecordsSystem --> Patient : Print medical records
+Patient -> MedicalRecordsSystem : End print
+else "Incorrect Authentication"
+MedicalRecordsSystem --> Patient : Provide credentials again
+end
+deactivate Patient
+deactivate MedicalRecordsSystem
+@enduml

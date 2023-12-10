@@ -1,0 +1,32 @@
+@startuml
+Title Generate Financial Report
+
+Actor Manager
+participant System
+participant ReportGenerator
+
+
+  Manager -> System: Requests to generate financial report
+  activate Manager
+  activate System
+  alt "Generate Report Request Sent"
+    System -> ReportGenerator: Sends request to generate report
+    activate ReportGenerator
+    alt "Report Generated Successfully"
+      ReportGenerator --> System: Returns report
+      deactivate ReportGenerator
+      System --> Manager: Displays report
+    else "Report Generation Failed"
+      ReportGenerator --> System: Error Message ("Report generation failed")
+      deactivate ReportGenerator
+      System --> Manager: Request to try again
+      deactivate System
+      deactivate Manager
+      break
+    end
+  end
+  deactivate System
+  deactivate Manager
+
+
+@enduml

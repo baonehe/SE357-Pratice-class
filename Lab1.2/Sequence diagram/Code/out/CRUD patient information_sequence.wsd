@@ -1,0 +1,68 @@
+@startuml
+title CRUD patient Information
+
+actor Manager
+participant System
+database Database
+
+alt "Create patient"
+  Manager -> System: Create patient
+  activate System
+  System -> Database: Save patient Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Read patient"
+  Manager -> System: Read patient Information
+  activate System
+  System -> Database: Retrieve patient Information
+  activate Database
+  Database --> System: patient Data
+  deactivate Database
+  alt Success
+    System --> Manager: Display patient Information
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Update patient"
+  Manager -> System: Update patient Information
+  activate System
+  System -> Database: Modify patient Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Delete patient"
+  Manager -> System: Delete patient Information
+  activate System
+  System -> Database: Remove patient Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+@enduml

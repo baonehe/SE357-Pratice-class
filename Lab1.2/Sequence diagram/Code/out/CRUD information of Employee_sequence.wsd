@@ -1,0 +1,68 @@
+@startuml
+title CRUD Employee Information
+
+actor Manager
+participant System
+database Database
+
+alt "Create Employee"
+  Manager -> System: Create Employee
+  activate System
+  System -> Database: Save Employee Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Read Employee"
+  Manager -> System: Read Employee Information
+  activate System
+  System -> Database: Retrieve Employee Information
+  activate Database
+  Database --> System: Employee Data
+  deactivate Database
+  alt Success
+    System --> Manager: Display Employee Information
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Update Employee"
+  Manager -> System: Update Employee Information
+  activate System
+  System -> Database: Modify Employee Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+alt "Delete Employee"
+  Manager -> System: Delete Employee Information
+  activate System
+  System -> Database: Remove Employee Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Manager: Success Message
+  else Failure
+    System --> Manager: Error Message
+  end
+  deactivate System
+end
+
+@enduml

@@ -1,0 +1,68 @@
+@startuml
+title CRUD patient schedule Information
+
+actor Employee
+participant System
+database Database
+
+alt "Create patient schedule"
+  Employee -> System: Create patient schedule
+  activate System
+  System -> Database: Save patient schedule Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Employee: Success Message
+  else Failure
+    System --> Employee: Error Message
+  end
+  deactivate System
+end
+
+alt "Read patient schedule"
+  Employee -> System: Read patient schedule Information
+  activate System
+  System -> Database: Retrieve patient schedule Information
+  activate Database
+  Database --> System: patient schedule Data
+  deactivate Database
+  alt Success
+    System --> Employee: Display patient schedule Information
+  else Failure
+    System --> Employee: Error Message
+  end
+  deactivate System
+end
+
+alt "Update patient schedule"
+  Employee -> System: Update patient schedule Information
+  activate System
+  System -> Database: Modify patient schedule Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Employee: Success Message
+  else Failure
+    System --> Employee: Error Message
+  end
+  deactivate System
+end
+
+alt "Delete patient schedule"
+  Employee -> System: Delete patient schedule Information
+  activate System
+  System -> Database: Remove patient schedule Information
+  activate Database
+  Database --> System: Confirmation
+  deactivate Database
+  alt Success
+    System --> Employee: Success Message
+  else Failure
+    System --> Employee: Error Message
+  end
+  deactivate System
+end
+
+@enduml

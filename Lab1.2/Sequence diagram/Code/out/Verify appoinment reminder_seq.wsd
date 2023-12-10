@@ -1,0 +1,23 @@
+@startuml
+title Send Appointment Reminder
+
+actor Patient
+participant System
+
+  Patient -> System: Request appointment reminder
+  activate Patient
+  activate System
+
+  alt "Generate Reminder and Send"
+    System --> Patient: Generate appointment reminder
+    Patient -> System: Confirm appointment reminder details
+    System --> Patient: Send appointment reminder
+  else "Failed to Send Reminder"
+    System --> Patient: Error Message ("Failed to send reminder")
+  end
+
+  deactivate System
+  deactivate Patient
+
+
+@enduml

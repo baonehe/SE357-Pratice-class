@@ -1,0 +1,76 @@
+@startuml
+title CRUD Inventory Sequence Diagram
+
+actor Manager
+participant VoucherSystem
+database Database
+
+alt "Create Inventory"
+  Manager -> VoucherSystem: Create Inventory
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Save Inventory information
+  activate Database
+  Database --> VoucherSystem: Confirmation
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Confirmation Message
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+alt "Read Inventory"
+  Manager -> VoucherSystem: Read Inventory
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Retrieve Inventory information
+  activate Database
+  Database --> VoucherSystem: Inventory Data
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Display Inventory information
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+alt "Update Inventory"
+  Manager -> VoucherSystem: Update Inventory
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Modify Inventory information
+  activate Database
+  Database --> VoucherSystem: Confirmation
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Confirmation Message
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+alt "Delete Inventory"
+  Manager -> VoucherSystem: Delete Inventory
+  activate Manager
+  activate VoucherSystem
+  VoucherSystem -> Database: Remove Inventory information
+  activate Database
+  Database --> VoucherSystem: Confirmation
+  deactivate Database
+  alt Success
+    VoucherSystem --> Manager: Confirmation Message
+  else Failure
+    VoucherSystem --> Manager: Failure Message
+  end
+  deactivate Manager
+  deactivate VoucherSystem
+end
+
+@enduml
