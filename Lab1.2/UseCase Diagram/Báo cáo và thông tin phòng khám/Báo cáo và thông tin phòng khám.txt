@@ -10,12 +10,14 @@ rectangle "Báo cáo và thông tin phòng khám" {
   usecase "Lập kế hoạch bảo dưỡng thiết bị" as Planequipmentmaintenance
   usecase " CRUD thông tin phòng khám " as infomation 
   usecase " CRUD thiết bị nha khoa " as dentalequipment
+  usecase " CRUD voucher " as voucher
 }
 
 manager --> viewReport
 manager --> viewWarehouseReceipt
 manager --> infomation
 manager --> dentalequipment
+manager --> voucher
 
 employee --> createWarehouseReceipt
 employee --> createReport
