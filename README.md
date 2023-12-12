@@ -4,8 +4,9 @@
 Topic: Phát triển ứng dụng hỗ trợ Quản lý Phòng khám Nha khoa (STT 26)
 
 **Contributors**:
-Trần Dư Gia Bảo 20520409 [Github](https://github.com/baonehe)
-Nguyễn Đức Tuấn 20522117
+
+- Trần Dư Gia Bảo 20520409 [Github](https://github.com/baonehe)
+- Nguyễn Đức Tuấn 20522117
 
 **Supervisors**:
 
@@ -15,31 +16,31 @@ Nguyễn Đức Tuấn 20522117
 
 Key components and features include:
 
-CRUD Patient Information: Create, read, update, and delete patient records, ensuring accurate and up-to-date information for effective healthcare management.
+- CRUD Patient Information: Create, read, update, and delete patient records, ensuring accurate and up-to-date information for effective healthcare management.
 
-Appointment Management (CRUD Appointment Schedule): Efficiently schedule, modify, or cancel appointments, optimizing the use of clinical resources and ensuring timely patient care.
+- Appointment Management (CRUD Appointment Schedule): Efficiently schedule, modify, or cancel appointments, optimizing the use of clinical resources and ensuring timely patient care.
 
-Employee Information Management (CRUD Employee Information): Maintain a comprehensive database of staff details, streamlining human resource management processes.
+- Employee Information Management (CRUD Employee Information): Maintain a comprehensive database of staff details, streamlining human resource management processes.
 
-Salary Calculation: Automate the process of calculating employee salaries, ensuring accuracy and efficiency in payroll management.
+- Salary Calculation: Automate the process of calculating employee salaries, ensuring accuracy and efficiency in payroll management.
 
-Termination: Manage employee terminations, updating relevant records and ensuring compliance with labor regulations.
+- Termination: Manage employee terminations, updating relevant records and ensuring compliance with labor regulations.
 
-Financial Reporting: Generate detailed financial reports to analyze clinic performance, expenses, and revenue, facilitating informed decision-making.
+- Financial Reporting: Generate detailed financial reports to analyze clinic performance, expenses, and revenue, facilitating informed decision-making.
 
-Prescription Management (CRUD Prescription): Create, update, and manage patient prescriptions, ensuring accurate medication records and compliance.
+- Prescription Management (CRUD Prescription): Create, update, and manage patient prescriptions, ensuring accurate medication records and compliance.
 
-Medical Records Printing (Print Medical Records): Generate printed copies of patient medical records for documentation and reference purposes.
+- Medical Records Printing (Print Medical Records): Generate printed copies of patient medical records for documentation and reference purposes.
 
-Inventory Management (Lập Phiếu Nhập Xuất Kho): Keep track of dental equipment inventory, managing stock levels, and documenting movement of supplies to ensure seamless clinic operations.
+- Inventory Management (Lập Phiếu Nhập Xuất Kho): Keep track of dental equipment inventory, managing stock levels, and documenting movement of supplies to ensure seamless clinic operations.
 
-Maintenance Planning for Equipment: Schedule and plan maintenance activities for dental equipment, ensuring the longevity and reliability of crucial tools.
+- Maintenance Planning for Equipment: Schedule and plan maintenance activities for dental equipment, ensuring the longevity and reliability of crucial tools.
 
-Voucher Management (CRUD Voucher): Create, manage, and track promotional vouchers or discounts, enhancing customer engagement and loyalty.
+- Voucher Management (CRUD Voucher): Create, manage, and track promotional vouchers or discounts, enhancing customer engagement and loyalty.
 
-Service Feedback: Collect and analyze feedback from patients to continuously improve the quality of services provided by the clinic.
+- Service Feedback: Collect and analyze feedback from patients to continuously improve the quality of services provided by the clinic.
 
-The implementation of a fast food system can significantly improve operational efficiency, enhance customer satisfaction, and provide valuable insights for strategic decision-making. It aims to create a seamless and enjoyable experience for both customers and employees while optimizing business processes.
+- The implementation of a fast food system can significantly improve operational efficiency, enhance customer satisfaction, and provide valuable insights for strategic decision-making. It aims to create a seamless and enjoyable experience for both customers and employees while optimizing business processes.
 
 **How to use**:
 
